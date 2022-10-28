@@ -32,7 +32,5 @@ for fruit_name in fruits_selected:
     # d = json_normalize(response.json()
     data.append(response.json())
 
-streamlit.text(data)
-# Convert a json to dataframe
 # Put the dataframe in streamlit
-# streamlit.dataframe(data)
+streamlit.dataframe(data)
