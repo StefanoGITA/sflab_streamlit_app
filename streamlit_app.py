@@ -25,7 +25,6 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 streamlit.dataframe(fruits_to_show)
 
 streamlit.header("Fruityvice Fruit Advice!")
-d = pd.DataFrame()
 for fruit_name in fruits_selected:
     response = requests.get(f"https://fruityvice.com/api/fruit/{fruit_name}")
     # pd.json_normalize convert a json to dataframe
