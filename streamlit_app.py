@@ -29,7 +29,8 @@ data = []
 for fruit_name in fruits_selected:
     response = requests.get(f"https://fruityvice.com/api/fruit/{fruit_name}")
     # pd.json_normalize convert a json to dataframe
-    data.append(pd.json_normalize(response.json()))
+    # d = json_normalize(response.json()
+    data.append(response.json())
 
 streamlit.text(data)
 # Convert a json to dataframe
