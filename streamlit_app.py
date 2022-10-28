@@ -18,6 +18,7 @@ my_fruit_list = my_fruit_list.set_index('Fruit')
 
 # Let's put a pick list here so they can pick the fruit they want to include
 fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index), ['Banana', 'Pineapple'])
+streamlit.text(fruits_selected)
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 # Display the table on the page.
@@ -30,6 +31,7 @@ for fruit_name in fruits_selected:
     # pd.json_normalize convert a json to dataframe
     data.append(pd.json_normalize(response.json()))
 
+streamlit.text(data)
 # Convert a json to dataframe
 # Put the dataframe in streamlit
-streamlit.dataframe(data)
+# streamlit.dataframe(data)
