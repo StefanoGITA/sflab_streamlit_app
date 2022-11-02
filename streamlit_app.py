@@ -42,6 +42,7 @@ streamlit.dataframe(my_data_rows)
 add_my_fruit = streamlit.text_input('What fruit would you like to add?')
 if add_my_fruit:
     streamlit.write('thanks for adding', add_my_fruit)
+    my_cur.execute(f"insert into fruit_load_list values('{add_my_fruit}')")
 
 # d = pd.DataFrame()
 # for fruit_name in fruits_selected:
