@@ -15,7 +15,7 @@ def get_fruit_load_list(cnx):
 def insert_row_into_fruit_load_list(cnx, new_fruit):
     with cnx.cursor() as my_cur:
         my_cur.execute(f"insert into fruit_load_list values('{new_fruit}')")
-        streamlit.text('thanks for adding', new_fruit)
+        return f'thanks for adding {new_fruit}'
 
 
 streamlit.title(" My parents new healthy Diner")
@@ -57,4 +57,5 @@ if streamlit.button("Get Fruit Load List"):
 
 add_my_fruit = streamlit.text_input('What fruit would you like to add?')
 if streamlit.button("Add Fruit to the list"):
-    insert_row_into_fruit_load_list(cnx, add_my_fruit)
+    msg = insert_row_into_fruit_load_list(my_cnx, add_my_fruit)
+    streamlit.text(msg)
